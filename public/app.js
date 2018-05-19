@@ -228,7 +228,7 @@ $(function () {
           $("#otherWineImage3").append(title);
         })
 
-        database.ref("/" + zip).push(newPairing);
+        // database.ref("/" + zip).push(newPairing);
       }
 
     });
