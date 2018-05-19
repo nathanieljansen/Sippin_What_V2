@@ -226,6 +226,15 @@ $(function () {
           var title = $("<p>");
           title.text(response.recommendedWines[2].title)
           $("#otherWineImage3").append(title);
+          var otherwineprice = $("<p>")
+          otherwineprice.text(response.recommendedWines[0].price)
+          $("#otherWineImage1").append(otherwineprice);
+          var otherwineprice = $("<p>")
+          otherwineprice.text(response.recommendedWines[1].price)
+          $("#otherWineImage2").append(otherwineprice);
+          var otherwineprice = $("<p>")
+          otherwineprice.text(response.recommendedWines[2].price)
+          $("#otherWineImage3").append(otherwineprice);
         })
 
         // database.ref("/" + zip).push(newPairing);
