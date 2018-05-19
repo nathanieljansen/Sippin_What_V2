@@ -5,7 +5,6 @@ var zip = "";
 
 var map, infoWindow;
 
-$(".wineSwipe").hide();
 
 function initMap() {
   map = new google.maps.Map(document.getElementById('map'), {
@@ -65,6 +64,7 @@ function initMap() {
 
 }
 
+
 function callback(results, status) {
   if (status === google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
@@ -117,8 +117,10 @@ function callback(results, status) {
     }
   }
 }
+$(document).ready(function () {
+      $(".wineSwipe").hide();
 
-$(function () {
+$( () => {
 
   $('.parallax').parallax();
   $(".autocomplete1").keyup( (event) => {
@@ -320,3 +322,4 @@ $(function () {
   //   console.log(childSnapshot.val());
   // });
 });
+})
