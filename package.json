@@ -1,0 +1,39 @@
+{
+  "name": "sippin_what_v2",
+  "version": "2.0.0",
+  "description": "Food and Wine Pairing",
+  "main": "index.js",
+  "dependencies": {
+    "a": "^2.1.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.15.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nathanieljansen/Sippin_What_V2.git"
+  },
+  "keywords": [
+    "wine",
+    "wine",
+    "pairing",
+    "pair",
+    "food",
+    "with",
+    "wine",
+    "food",
+    "and",
+    "wine",
+    "pairing"
+  ],
+  "author": "Nathaniel Jansen, Carol Gibson, Pritha Mishra, and David Madasci",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nathanieljansen/Sippin_What_V2/issues"
+  },
+  "homepage": "https://github.com/nathanieljansen/Sippin_What_V2#readme"
+}
