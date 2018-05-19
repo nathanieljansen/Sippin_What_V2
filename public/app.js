@@ -17,7 +17,7 @@ function initMap() {
   });
   infoWindow = new google.maps.InfoWindow;
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(function (position) {
+    navigator.geolocation.getCurrentPosition((position) => {
       var pos = {
         lat: position.coords.latitude,
         lng: position.coords.longitude
@@ -26,11 +26,11 @@ function initMap() {
       $.ajax({
         url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + pos.lat + "," + pos.lng + "&sensor=true",
         type: "GET",
-      }).then(function (resultsBack) {
+      }).then( (resultsBack) => {
         console.log(resultsBack);
         // console.log('did it work ???', resultsBack.results[5].address_components[0].long_name);
         // zip = resultsBack.results[5].address_components[0].long_name;
-        zip = resultsBack.results.find(function (result) {
+        zip = resultsBack.results.find( (result) => {
           return result.address_components.find(({
             types
           }) => types.includes('postal_code'))
@@ -55,7 +55,7 @@ function initMap() {
         type: ['liquor_store']
       }, callback);
       map.setCenter(pos);
-    }, function () {
+    }, () => {
       handleLocationError(true, infoWindow, map.getCenter());
     });
   } else {
@@ -80,7 +80,7 @@ function createMarker(place) {
     position: place.geometry.location
   });
 
-  google.maps.event.addListener(marker, 'click', function () {
+  google.maps.event.addListener(marker, 'click',  () => {
     infowindow.setContent(place.name);
     infowindow.open(map, this);
   });
@@ -121,13 +121,13 @@ function callback(results, status) {
 $(function () {
 
   $('.parallax').parallax();
-  $(".autocomplete1").keyup(function (event) {
+  $(".autocomplete1").keyup( (event) => {
     if (event.keyCode === 13) {
       $(".searchButton").click();
     }
   });
 
-  $(".searchButton").click(function () {
+  $(".searchButton").click( () => {
 
     event.preventDefault();
     $("#words").empty();
@@ -148,7 +148,7 @@ $(function () {
       }
 
     }
-    $.ajax(wineAPI).then(function (response) {
+    $.ajax(wineAPI).then((response) => {
       console.log(response)
 
 
@@ -206,7 +206,7 @@ $(function () {
             "Cache-Control": "no-cache",
           }
         }
-        $.ajax(comparableAPI).then(function (response) {
+        $.ajax(comparableAPI).then( (response) => {
           console.log(response.recommendedWines)
           var img = $("<img>");
           img.attr("src", response.recommendedWines[0].imageUrl);
@@ -238,33 +238,33 @@ $(function () {
 
 
 
-  var messagesRef = firebase.database().ref("messages");
+  // var messagesRef = firebase.database().ref("messages");
 
 
   //listen for form submiyt
-  document.getElementById("contact-form").addEventListener("submit", submitForm);
+  // document.getElementById("contact-form").addEventListener("submit", submitForm);
 
 
-  //submit the form
-  function submitForm(e) {
-    e.preventDefault();
+  // //submit the form
+  // function submitForm(e) {
+  //   e.preventDefault();
 
 
 
-    //getvalues
-    var firstName = getInputVal("first_name");
-    var lastName = getInputVal("last_name");
-    var email = getInputVal("email");
-    var message = getInputVal("textarea1");
+  //   //getvalues
+  //   var firstName = getInputVal("first_name");
+  //   var lastName = getInputVal("last_name");
+  //   var email = getInputVal("email");
+  //   var message = getInputVal("textarea1");
 
-    console.log(name);
+  //   console.log(name);
 
-    //save message
-    saveMessage(firstName, lastName, email, message);
+  //   //save message
+  //   saveMessage(firstName, lastName, email, message);
 
-    //clear form
-    document.getElementById("contact-form").reset();
-  }
+  //   //clear form
+  //   document.getElementById("contact-form").reset();
+  // }
 
 
   //function to get form values
@@ -275,16 +275,16 @@ $(function () {
 
 
 
-  //save messages to firebase
-  function saveMessage(firstName, lastName, email, message) {
-    var newMessageRef = messagesRef.push();
-    newMessageRef.set({
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      message: message,
-    })
-  };
+  // //save messages to firebase
+  // function saveMessage(firstName, lastName, email, message) {
+  //   var newMessageRef = messagesRef.push();
+  //   newMessageRef.set({
+  //     firstName: firstName,
+  //     lastName: lastName,
+  //     email: email,
+  //     message: message,
+  //   })
+  // };
 
 
 
@@ -307,7 +307,7 @@ $(function () {
   //   })
   // })
 
-  database.ref().on("child_added", function (childSnapshot, prevChildKey) {
-    console.log(childSnapshot.val());
-  });
+  // database.ref().on("child_added", function (childSnapshot, prevChildKey) {
+  //   console.log(childSnapshot.val());
+  // });
 });
