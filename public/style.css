@@ -1,0 +1,111 @@
+body {
+
+  margin-top: 4%;
+  font-family: 'Palatino-Normal-34608';
+}
+
+.autocomplete {
+  font-size: 16px;
+}
+
+.nav-wrapper {
+  background: #5b0b0b !important;
+}
+
+#autocomplete-input {
+  color: black;
+  border-radius: 5px;
+  border-bottom: 1px solid #8f8023 !important;
+  -webkit-box-shadow: 0 1px 0 0 #8f8023 !important;
+  box-shadow: 0 1px 0 0 #8f8023 !important;
+}
+
+.active {
+  color: #5b0b0b !important;
+}
+
+.btn {
+  background-color: #8f8023 !important;
+  border-radius: 5px !important;
+}
+
+.pImage1 {
+  height: 150px !important;
+}
+
+a {
+  color: #8f8023 !important;
+}
+
+.tabs .indicator {
+  background-color: #5b0b0b !important;
+}
+
+.preText {
+  font-size: 11px !important;
+}
+
+#image {
+  text-align: center !important;
+}
+
+.brand-logo {
+  margin-left: 15px;
+  color: white !important;
+}
+
+.pImage1 {
+  height: 200px !important;
+}
+
+.image2 {
+  height: 250px !important;
+}
+
+.meet {
+  color: white !important;
+}
+
+.page-footer {
+  background: #5b0b0b !important;
+}
+
+.map2 {
+  width: 100%;
+  height: 400px;
+  margin-top: 13px;
+}
+
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #8f8023 !important;
+  box-shadow: 0 1px 0 0 #8f8023 !important;
+  background-color: white !important;
+}
+
+.input-field input[type=email]:focus {
+  border-bottom: 1px solid #8f8023 !important;
+  box-shadow: 0 1px 0 0 #8f8023 !important;
+  background-color: white !important;
+}
+
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #8f8023 !important;
+  box-shadow: 0 1px 0 0 #8f8023 !important;
+  background-color: white !important;
+}
+
+#pic {
+  width: 200px;
+  padding: 4px;
+}
+
+input.valid:not([type]), input.valid:not([type]):focus, input[type=text].valid:not(.browser-default), input[type=text].valid:not(.browser-default):focus, input[type=password].valid:not(.browser-default), input[type=password].valid:not(.browser-default):focus, input[type=email].valid:not(.browser-default), input[type=email].valid:not(.browser-default):focus, input[type=url].valid:not(.browser-default), input[type=url].valid:not(.browser-default):focus, input[type=time].valid:not(.browser-default), input[type=time].valid:not(.browser-default):focus, input[type=date].valid:not(.browser-default), input[type=date].valid:not(.browser-default):focus, input[type=datetime].valid:not(.browser-default), input[type=datetime].valid:not(.browser-default):focus, input[type=datetime-local].valid:not(.browser-default), input[type=datetime-local].valid:not(.browser-default):focus, input[type=tel].valid:not(.browser-default), input[type=tel].valid:not(.browser-default):focus, input[type=number].valid:not(.browser-default), input[type=number].valid:not(.browser-default):focus, input[type=search].valid:not(.browser-default), input[type=search].valid:not(.browser-default):focus, textarea.materialize-textarea.valid, textarea.materialize-textarea.valid:focus, .select-wrapper.valid>input.select-dropdown {
+  border-bottom: 1px solid #5b0b0b !important;
+  -webkit-box-shadow: 0 1px 0 0 #5b0b0b!important;
+  box-shadow: 0 1px 0 0 #5b0b0b !important;
+  background-color: white !important;
+}
+
+.row .col {
+  margin-top: 10px;
+}
