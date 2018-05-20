@@ -4,6 +4,10 @@ const bodyParser = require("body-parser");
 const app = express();
 const PORT = process.env.PORT || 8080;
 const exphbs = require("express-handlebars");
+const connection = require("./config/connection.js")
+
+var authenticateController = require('./config/authenticate-controller');
+var registerController = require('./config/register-controller');
 
 app.use(bodyParser.urlencoded({
   extended: true
@@ -23,15 +27,24 @@ app.get("/contact", (req, res) => {
 app.get("/about", (req, res) => {
   res.render("about");
 });
-
 app.get("/login", (req, res) => {
   res.render("login");
+});
+app.get("/registerUser", (req, res) => {
+  res.render("registerUser");
 });
 
 app.use(express.static(__dirname + '/public'))
 
-require('./config/routes.js')
+app.post('/api/register', registerController.register);
+app.post('/api/authenticate', authenticateController.authenticate);
+
+console.log(authenticateController);
+app.post('/controllers/register-controller', registerController.register);
+app.post('/controllers/authenticate-controller', authenticateController.authenticate);
 
 app.listen(PORT, () => {
   console.log("App listening on PORT " + PORT);
 });
+
+
