@@ -1,5 +1,4 @@
 body {
-
   margin-top: 4%;
   font-family: 'Palatino-Normal-34608';
 }
@@ -76,6 +75,12 @@ a {
   margin-top: 13px;
 }
 
+.input-field input[type=password]:focus {
+  border-bottom: 1px solid #8f8023 !important;
+  box-shadow: 0 1px 0 0 #8f8023 !important;
+  background-color: white !important;
+}
+
 .input-field input[type=text]:focus {
   border-bottom: 1px solid #8f8023 !important;
   box-shadow: 0 1px 0 0 #8f8023 !important;
@@ -97,13 +102,6 @@ textarea.materialize-textarea:focus:not([readonly]) {
 #pic {
   width: 200px;
   padding: 4px;
-}
-
-input.valid:not([type]), input.valid:not([type]):focus, input[type=text].valid:not(.browser-default), input[type=text].valid:not(.browser-default):focus, input[type=password].valid:not(.browser-default), input[type=password].valid:not(.browser-default):focus, input[type=email].valid:not(.browser-default), input[type=email].valid:not(.browser-default):focus, input[type=url].valid:not(.browser-default), input[type=url].valid:not(.browser-default):focus, input[type=time].valid:not(.browser-default), input[type=time].valid:not(.browser-default):focus, input[type=date].valid:not(.browser-default), input[type=date].valid:not(.browser-default):focus, input[type=datetime].valid:not(.browser-default), input[type=datetime].valid:not(.browser-default):focus, input[type=datetime-local].valid:not(.browser-default), input[type=datetime-local].valid:not(.browser-default):focus, input[type=tel].valid:not(.browser-default), input[type=tel].valid:not(.browser-default):focus, input[type=number].valid:not(.browser-default), input[type=number].valid:not(.browser-default):focus, input[type=search].valid:not(.browser-default), input[type=search].valid:not(.browser-default):focus, textarea.materialize-textarea.valid, textarea.materialize-textarea.valid:focus, .select-wrapper.valid>input.select-dropdown {
-  border-bottom: 1px solid #5b0b0b !important;
-  -webkit-box-shadow: 0 1px 0 0 #5b0b0b!important;
-  box-shadow: 0 1px 0 0 #5b0b0b !important;
-  background-color: white !important;
 }
 
 .row .col {
