@@ -34,6 +34,10 @@ app.get("/registerUser", (req, res) => {
   res.render("registerUser");
 });
 
+app.get("/admin", (req, res) => {
+  res.render("admin");
+});
+
 app.use(express.static(__dirname + '/public'))
 
 app.post('/api/register', registerController.register);
