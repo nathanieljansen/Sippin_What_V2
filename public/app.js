@@ -4,6 +4,7 @@ window.onbeforeunload = function () {
 
 $(document).ready( () => {
   $(".wineSwipe").hide();
+  $("#map").hide();
   $(() => {
     $('.parallax').parallax();
     $(".autocomplete1").keyup((event) => {

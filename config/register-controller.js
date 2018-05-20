@@ -20,11 +20,7 @@ module.exports.register = function (req, res) {
         message: 'there are some error with query'
       })
     } else {
-      res.json({
-        status: true,
-        data: results,
-        message: 'user registered sucessfully'
-      })
+      res.redirect("../login")
     }
   });
 }
