@@ -1,10 +1,11 @@
-var Cryptr = require('cryptr');
+const Cryptr = require('cryptr');
 cryptr = new Cryptr('myTotalySecretKey');
 
-var connection = require('../config/connection');
+
+const connection = require('../config/connection');
 module.exports.authenticate = function (req, res) {
-  var email = req.body.email;
-  var password = req.body.password;
+  const email = req.body.email;
+  const password = req.body.password;
 
 
   connection.query('SELECT * FROM users WHERE email = ?', [email], function (error, results, fields) {
@@ -27,10 +28,7 @@ module.exports.authenticate = function (req, res) {
         }
 
       } else {
-        res.json({
-          status: false,
-          message: "Email does not exits"
-        });
+        res.redirect("../login")
       }
     }
   });

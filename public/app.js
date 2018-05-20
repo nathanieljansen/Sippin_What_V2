@@ -2,7 +2,8 @@ window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 }
 
-$(document).ready( () => {
+$(document).ready(() => {
+
   $(".wineSwipe").hide();
   $("#map").hide();
   $(() => {
