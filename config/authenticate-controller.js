@@ -18,6 +18,9 @@ module.exports.authenticate = function (req, res) {
 
       if (results.length > 0) {
         decryptedString = cryptr.decrypt(results[0].password);
+        if (email || password === ""){
+          console.log("Input a valid email or password")
+        }
         if (password == decryptedString) {
           res.redirect("../admin")
         } else {
