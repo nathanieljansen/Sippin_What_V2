@@ -33,7 +33,8 @@ $(document).ready(() => {
 
       $("#foodInput").val("");
      function foodValidation() {
-       if (textInput == "") {
+       var onlyText = /^[a-zA-Z]+$/
+       if (textInput == "" || textInput != onlyText) {
          $(".notValid").text("You Should Probably Eat with Your Wine!");
            
        }else {
