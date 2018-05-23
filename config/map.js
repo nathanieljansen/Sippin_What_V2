@@ -40,6 +40,7 @@ function initMap() {
           }) => types.includes('postal_code')).long_name;
         }
 
+        localStorage.setItem("zip", zip);
         console.log(zip);
       })
 
