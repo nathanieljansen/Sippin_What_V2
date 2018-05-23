@@ -25,6 +25,8 @@ $(document).ready(() => {
 
     $(".searchButton").click(() => {
       // var letters = /^[A-Za-z]+$/
+      console.log(window.localStorage);
+
       event.preventDefault();
       
       $("#words").empty();
@@ -55,7 +57,28 @@ $(document).ready(() => {
            }
          }
          $.ajax(wineAPI).then((response) => {
-           console.log(response)
+           
+          console.log("response", response)
+
+          var zip = localStorage.getItem("zip");
+          var pairingRecord = {
+            zip: zip,
+            food: textInput,
+            pairingInfo: response,
+          };
+
+          $.ajax({
+            method: "POST",
+            url: "/api/pairingRecord",
+            data: pairingRecord
+          }).then(function (responseFromBackEnd) {
+            console.log('Quit it!!', responseFromBackEnd)
+          });
+
+          console.log(pairingRecord)
+
+
+
            if (response.status === "failure") {
              console.log(response.message)
              $(".notValid").text("Sorry! " + response.message + ". We are always trying to improve. Thanks for you help!");
