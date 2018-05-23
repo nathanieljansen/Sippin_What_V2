@@ -1,67 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
+  <title>Passport Authentication</title>
+
+
 <body>
-
-  <div class="col s12 center">
-    <h2 class="mainHeader">Admin Login</h2>
-    <div>Please Login to View Site Statistics</div>
-  </div>
-  <div class="parallax-container pImage1">
-    <div class="parallax">
-      <img src="/images/wine-1476628_640.jpg">
-    </div>
-  </div>
-  <div class="section white container">
+  <div class="container">
     <div class="row">
-      <form class="col s12" id="login-form" action="/controllers/authenticate-controller" method="POST">
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">email</i>
-            <input type="email" name="email" class="autocomplete-input" class="validate">
-            <label for="email" data-error="please enter a valid email" data-success="valid email">Email</label>
+      <div class="col-md-6 col-md-offset-3">
+        <h2>Login Form</h2>
+        <form class="login">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Email address</label>
+            <input type="email" class="form-control" id="email-input" placeholder="Email">
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <i class="material-icons prefix">fingerprint</i>
-          <input type="password" name="password" class="autocomplete-input">
-            <label for="password">Password</label>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input type="password" class="form-control" id="password-input" placeholder="Password">
           </div>
-        </div>
-          <p class "full">
-            <button class="btn waves-effect waves-light" type="submit" value="Submit">Submit
-            </button>
-          </p>
-        </div>
-  
-      </form>
+          <button type="submit" class="btn btn-default">Login</button>
+        </form>
+        <br />
+        <p>Or sign up
+          <a href="/signup">here</a>
+        </p>
+      </div>
     </div>
   </div>
-  <div class="parallax-container">
-    <div class="parallax">
-      <img src="/images/cork-738603_640.jpg">
-    </div>
-  </div>
-  
 
-  {{!-- <div class="section white container">
-  <form action="/controllers/authenticate-controller" method="POST">
-
-    Email:
-    <input type="text" name="email"> 
-    Password:
-    <input type="password" name="password">
-
-    <input type="submit" value="Submit">
-  </form>
-  </div> --}}
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
 
 </body>
 
