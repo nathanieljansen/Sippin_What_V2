@@ -4,6 +4,7 @@
   "description": "Food and Wine Pairing",
   "main": "index.js",
   "dependencies": {
+    "axios": "^0.18.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
     "cryptr": "^3.0.0",

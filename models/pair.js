@@ -11,7 +11,7 @@ module.exports = function (sequelize, DataTypes) {
         },
         food: {
             type: DataTypes.STRING,
-            allowNull: false
+            // allowNull: false
         },
         paired: {
             type: DataTypes.BOOLEAN,
@@ -23,7 +23,7 @@ module.exports = function (sequelize, DataTypes) {
         // }
         first_match: {
             type: DataTypes.STRING,
-            allowNull: false
+        
         },
         // comparable_wines1: {
         //     type: DataTypes.STRING,
@@ -39,7 +39,7 @@ module.exports = function (sequelize, DataTypes) {
         // },
         description: {
             type: DataTypes.STRING,
-            allowNull: false
+            // allowNull: false
         },
     });
     return foodPairing;
