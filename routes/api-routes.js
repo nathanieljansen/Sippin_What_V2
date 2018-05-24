@@ -64,7 +64,7 @@ module.exports = function(app) {
 
     }
     console.log("Format: " + saveFormat)    
-    db.FoodPairing.create(JSON.parse(saveFormat)).then(function (dbResponse) {
+    db.foodPairing.create(JSON.parse(saveFormat)).then(function (dbResponse) {
 
       console.log(dbResponse)
     });

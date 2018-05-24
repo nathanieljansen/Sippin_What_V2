@@ -1,6 +1,6 @@
 
 module.exports = function (sequelize, DataTypes) {
-    var FoodPairing = sequelize.define("foodpairings", {
+    var foodPairing = sequelize.define("foodPairing", {
         // age: {
         //     type: DataTypes.STRING,
         //     allowNull: false
@@ -42,5 +42,5 @@ module.exports = function (sequelize, DataTypes) {
             allowNull: false
         },
     });
-    return FoodPairing;
+    return foodPairing;
 };
