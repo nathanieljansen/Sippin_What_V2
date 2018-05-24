@@ -11,10 +11,12 @@ var db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
+
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
   extended: true
 }));
-app.use(bodyParser.json());
+
 app.use(express.static("public"));
 // We need to use sessions to keep track of our user's login status
 app.use(session({

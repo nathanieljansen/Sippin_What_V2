@@ -40,7 +40,7 @@ $(document).ready(() => {
 
       $("#foodInput").val("");
      function foodValidation() {
-       var onlyText = /^[a-zA-Z]+$/
+       var onlyText = /[a-zA-Z]+$/
        if (textInput == "" || !textInput.match(onlyText)) {
          $(".notValid").text("You Should Probably Eat with Your Wine!");
            

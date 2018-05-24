@@ -53,18 +53,19 @@ module.exports = function(app) {
   });
 
   app.post("/api/pairingRecord", function (req, res) {
-    console.log("Hit it", req.body.pairingInfo);
+    //console.log("Hit it", req.body.pairingInfo);
     var saveFormat = {
       zip: req.body.zip, 
       food: req.body.food,
       paired: true, 
       // general_types: req.body.pairingInfo.pairingText[0]
-      first_match: req.body.pairingInfo.productMatches[0].title,
-      description: req.body.pairingInfo.productMatches[0].description,
+      // first_match: req.body.pairingInfo.productMatches[0].title,
+      // description: req.body.pairingInfo.productMatches[0].description,
 
     }
-    
-    db.FoodPairing.create(saveFormat).then(function (dbResponse) {
+    console.log("Format: " + saveFormat)    
+    db.FoodPairing.create(JSON.parse(saveFormat)).then(function (dbResponse) {
+
       console.log(dbResponse)
     });
     res.send("all good");

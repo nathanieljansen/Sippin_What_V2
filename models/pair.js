@@ -1,25 +1,6 @@
-const mysql = require("mysql");
-var connection = mysql.createConnection({
-    host: "localhost",
-    port: 3306,
-
-    // Your username
-    user: "root",
-
-    // Your password
-    password: "",
-    database: "SipIt_db"
-});
-
-connection.connect(function (err) {
-    if (err) throw err;
-    console.log("connected as id " + connection.threadId);
-    // connection.end();
-});
-
 
 module.exports = function (sequelize, DataTypes) {
-    var FoodPairing = sequelize.define("FoodPairing", {
+    var FoodPairing = sequelize.define("foodpairings", {
         // age: {
         //     type: DataTypes.STRING,
         //     allowNull: false

@@ -8,17 +8,11 @@ module.exports = function(app) {
 
   app.get("/", function(req, res) {
     // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/admin");
-    }
     res.render(path.join(__dirname, "../views/index"));
   });
 
   app.get("/login", function(req, res) {
     // If the user already has an account send them to the members page
-    if (req.user) {
-      res.redirect("/admin");
-    }
     res.render(path.join(__dirname, "../views/login"));
   });
 
