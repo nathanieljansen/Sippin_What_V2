@@ -1,12 +1,22 @@
 
+'use strict';
+
+var fs = require('fs');
+var path = require('path');
+var Sequelize = require('sequelize');
+var basename = path.basename(module.filename);
+var env = process.env.NODE_ENV || 'development';
+var config = require(__dirname + '/../config/config.json')[env];
+var db = {};
+
 module.exports = function (sequelize, DataTypes) {
-    var foodPairing = sequelize.define("foodPairing", {
+    var foodpairings = sequelize.define("foodpairings", {
         // age: {
         //     type: DataTypes.STRING,
         //     allowNull: false
         // },
         zip: {
-            type: DataTypes.STRING,
+            type: DataTypes.INTEGER,
             allowNull: false
         },
         food: {
@@ -42,5 +52,5 @@ module.exports = function (sequelize, DataTypes) {
             // allowNull: false
         },
     });
-    return foodPairing;
+    return foodpairings;
 };
