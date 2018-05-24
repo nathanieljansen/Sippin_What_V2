@@ -68,7 +68,7 @@ module.exports = function(app) {
 
       console.log(dbResponse)
     });
-    res.send("all good");
+    // res.send("all good");
   })
 
 

@@ -64,7 +64,7 @@ $(document).ready(() => {
           var pairingRecord = {
             zip: zip,
             food: textInput,
-            pairingInfo: response,
+            // pairingInfo: response,
           };
 
           $.ajax({
