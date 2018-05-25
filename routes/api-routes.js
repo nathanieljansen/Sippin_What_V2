@@ -41,6 +41,22 @@ module.exports = function(app) {
     res.redirect("/");
   });
 
+  app.get("/api/allWines", function (req, res){
+    console.log("We hit the route API FILE!!",db);
+    db.foodPairing.findAll().then(function (dbResponse) {
+      console.log(dbResponse)
+      res.json(dbResponse);
+    });
+  });
+
+  app.get("/api/zip", function (req, res){
+    console.log("We hit the route API FILE!!",db);
+    db.foodPairing.findAll().then(function (dbResponse) {
+      console.log(dbResponse)
+      res.json(dbResponse);
+    });
+  });
+
   // Route for getting some data about our user to be used client side
   app.get("/api/user_data", function(req, res) {
     if (!req.user) {
@@ -95,6 +111,23 @@ module.exports = function(app) {
     // pairInfo("../foodpairing.js", function(data){});
   });
 
+
+  //PM TESTS
+  
+
+  // Find all the first_match (picked wine)
+  // SipIt_db
+  // .findAndCountAll({
+  //    where: {
+  //     first_match: {
+  //         [Op.like]: 'foo%'
+  //       }
+  //    },
+  // })
+  // .then(result => {
+  //   console.log(result.count);
+  //   console.log(result.rows);
+  // });
 
 
 

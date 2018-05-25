@@ -112,9 +112,21 @@ app.get("/admin", (req, res) => {
 app.get("/signup", (req, res) => {
   res.render("signup");
 });
+app.get("/api/allWines", function (req, res){
+  console.log("We hit the route SERVER.js file!!");
+  db.foodPairing.findAll().then(function (dbResponse) {
+
+    console.log(dbResponse)
+    res.json(dbResponse);
+  });
+});
 
 
-
+db.sequelize.sync().then(function(){
+  app.listen(PORT, () => {
+    console.log("App listening on PORT " + PORT);
+  });
+})
 
 db.sequelize.sync({force:true}).then(function () {
   app.listen(PORT, function () {
