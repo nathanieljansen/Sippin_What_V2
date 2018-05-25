@@ -58,3 +58,25 @@
 </body>
   
   </html>
+  <script type="text/javascript">
+      $("#contact-form").on("submit", function(event) { //$(".create-form").on("submit", function(event) {
+      // Make sure to preventDefault on a submit event.
+      event.preventDefault();
+
+
+    var newMessage = {
+      first_name: $("#first_name").val().trim(),
+      last_name: $("#last_name").val().trim(),
+      email: $("#email").val().trim(),
+      message: $("#textarea1").val(),
+    };
+    console.log(newMessage);
+
+    $.post("/messages/create", newMessage) 
+    .done(function(data) {
+        console.log(data);
+      });
+    //AJAX POST call goes above to send this object to the relevant post route offered by express router called "/messages/create"
+      });
+
+  </script>
