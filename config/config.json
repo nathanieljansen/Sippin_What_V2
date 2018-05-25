@@ -2,11 +2,7 @@
   "development": {
     "username": "root",
     "password": "",
-<<<<<<< HEAD
-    "database": "Sipit_db",
-=======
     "database": "SipIt_db",
->>>>>>> 0feb072b920faa74207732f8ff04a670eb62d8dd
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
