@@ -22,8 +22,12 @@ module.exports = function(app) {
     db.User.create({
       email: req.body.email,
       password: req.body.password
-    }).then(function() {
-      res.redirect(307, "/api/login");
+    }).then(function(user) {
+      req.login(user, (err) => {
+        if (err) throw err;
+        res.json('/admin');
+      });
+      
     }).catch(function(err) {
       console.log(err);
       res.json(err);
@@ -68,6 +72,27 @@ module.exports = function(app) {
     });
     // res.send("all good");
   })
+
+  app.post('/api/messages/', function (req, res) {
+    console.log("i'm a log");
+    console.log(db.Messages, "this is db");
+    // edited burger create to add in a burger_name
+    db.Messages.create({
+        name: req.body.name,
+        email: req.body.email,
+        message: req.body.message,
+      })
+      // pass the result of our call
+      .then(function (newMessage) {
+        // log the result to our terminal/bash window
+        console.log(newMessage);
+        // redirect
+        
+      });
+
+    // //working on foodpairing part here://
+    // pairInfo("../foodpairing.js", function(data){});
+  });
 
 
 
