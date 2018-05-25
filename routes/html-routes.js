@@ -22,4 +22,11 @@ module.exports = function(app) {
     res.render(path.join(__dirname, "../views/admin"));
   });
 
+  app.get("/statistics", (req, res) => {
+    res.render(path.join(__dirname, "../views/statistics"));
+  });
+  
+  app.get("/api/allWine"), (req, res) =>{
+    res.render("/api/allWine");
+  }
 };

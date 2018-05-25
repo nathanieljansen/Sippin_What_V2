@@ -77,8 +77,6 @@ $(document).ready(() => {
 
           console.log(pairingRecord)
 
-
-
            if (response.status === "failure") {
              console.log(response.message)
              $(".notValid").text("Sorry! " + response.message + ". We are always trying to improve. Thanks for you help!");
