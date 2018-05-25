@@ -17,7 +17,7 @@ module.exports = function (sequelize, DataTypes) {
         // },
         zip: {
             type: DataTypes.INTEGER,
-            allowNull: false
+            // allowNull: false
         },
         food: {
             type: DataTypes.STRING,
@@ -27,11 +27,16 @@ module.exports = function (sequelize, DataTypes) {
             type: DataTypes.BOOLEAN,
             default: true
         },
+         description: {
+             type: DataTypes.STRING,
+             allowNull: false,
+             max_allowed_packet: true
+         },
         // general_notes: {
         //     type: DataTypes.STRING,
         //     allowNull: false
         // }
-        first_match: {
+        mmmmSuperSexy_match: {
             type: DataTypes.STRING,
         
         },
@@ -47,10 +52,7 @@ module.exports = function (sequelize, DataTypes) {
         //     type: DataTypes.STRING,
         //     allowNull: false
         // },
-        description: {
-            type: DataTypes.STRING,
-            // allowNull: false
-        },
+       
     });
     return foodpairings;
 };

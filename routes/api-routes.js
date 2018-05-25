@@ -1,6 +1,7 @@
 // Requiring our models and passport as we've configured it
-var db = require("../models");
-var passport = require("../config/passport");
+const db = require("../models");
+const passport = require("../config/passport");
+
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -56,7 +57,9 @@ module.exports = function(app) {
     console.log("Hit it", req.body);
     var saveFormat = {
       zip: req.body.zip, 
-      food: req.body.food
+      food: req.body.food,
+      paired: true,
+      description: req.body.pairingInfo.pairingText
     }
     console.log(saveFormat)  
     db.foodpairings.create(saveFormat).then(function (dbResponse) {
