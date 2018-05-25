@@ -9,7 +9,7 @@ var env = process.env.NODE_ENV || 'development';
 var config = require(__dirname + '/../config/config.json')[env];
 var db = {};
 
-module.exports = function (sequelize, DataTypes) {
+module.exports =  (sequelize, DataTypes) => {
     var foodpairings = sequelize.define("foodpairings", {
         // age: {
         //     type: DataTypes.STRING,

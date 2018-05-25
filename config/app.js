@@ -1,4 +1,4 @@
-window.onbeforeunload = function () {
+window.onbeforeunload =  () => {
   window.scrollTo(0, 0);
   $('.modal').modal();
 
@@ -41,7 +41,7 @@ $(document).ready(() => {
       function foodValidation() {
         var onlyText = /[a-zA-Z]+$/
         if (textInput == "" || !textInput.match(onlyText)) {
-          $(".notValid").text("You Should Probably Eat with Your Wine!");
+          $(".notValid").text("You Should Probably Eat with Your Wine! Try Typing in Some Food");
 
         } else {
           const wineQueryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/wine/pairing?food=" + textInput + "&maxPrice=50";
@@ -70,7 +70,7 @@ $(document).ready(() => {
               method: "POST",
               url: "/api/pairingRecord",
               data: pairingRecord
-            }).then(function (responseFromBackEnd) {
+            }).then((responseFromBackEnd)=> {
               console.log('Quit it!!', responseFromBackEnd)
             });
 
@@ -186,7 +186,7 @@ $(".contactButton").click(() => {
   console.log(newMessage);
 
   $.post("/api/messages", newMessage)
-    .done(function (data) {
+    .done( (data) => {
       console.log(data);
     });
   // AJAX POST call goes above to send this object to the relevant post route offered by express router called "/messages/create"
