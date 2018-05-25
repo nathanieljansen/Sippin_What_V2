@@ -42,15 +42,15 @@ module.exports = function(app) {
   });
 
   app.get("/api/allWines", function (req, res){
-    console.log("We hit the route API FILE!!",db);
-    db.foodPairing.findAll().then(function (dbResponse) {
+    console.log("We hit the route API FILE!!");
+    db.foodpairings.findAll().then(function (dbResponse) {
       console.log(dbResponse)
       res.json(dbResponse);
     });
   });
 
   app.get("/api/zip", function (req, res){
-    console.log("We hit the route API FILE!!",db);
+    console.log("We hit the route API FILE with ZIP!!",db);
     db.foodPairing.findAll().then(function (dbResponse) {
       console.log(dbResponse)
       res.json(dbResponse);

@@ -13,7 +13,7 @@ $(document).ready(function () {
             data: {
                 columns: [
                     ["Zip", values],
-                    ["Count", count],
+                    //["Count", count],
                 ],
                 type: 'bar',
                 // type: 'donut',
