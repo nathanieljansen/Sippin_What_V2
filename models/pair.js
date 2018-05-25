@@ -16,8 +16,8 @@ module.exports = function (sequelize, DataTypes) {
         //     allowNull: false
         // },
         zip: {
-            type: DataTypes.INTEGER,
-            allowNull: false
+            type: DataTypes.STRING,
+            allowNull: true
         },
         food: {
             type: DataTypes.STRING,
@@ -48,7 +48,7 @@ module.exports = function (sequelize, DataTypes) {
         //     allowNull: false
         // },
         description: {
-            type: DataTypes.STRING,
+            type: DataTypes.STRING(2000),
             // allowNull: false
         },
     });

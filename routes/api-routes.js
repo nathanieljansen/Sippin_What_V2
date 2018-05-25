@@ -56,9 +56,12 @@ module.exports = function(app) {
     console.log("Hit it", req.body);
     var saveFormat = {
       zip: req.body.zip, 
-      food: req.body.food
+      food: req.body.food,
+      paired: true,
+      first_match: req.body.pairingInfo.productMatches[0].title,
+      description: req.body.pairingInfo.pairingText
     }
-    console.log(saveFormat)  
+    console.log("Damn Gurl", saveFormat)  
     db.foodpairings.create(saveFormat).then(function (dbResponse) {
 
       console.log(dbResponse)

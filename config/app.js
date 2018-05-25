@@ -62,9 +62,9 @@ $(document).ready(() => {
 
           var zip = localStorage.getItem("zip");
           var pairingRecord = {
-            zip: zip,
+            zip: zip === 'DEFAULT' ? null : zip,
             food: textInput,
-            // pairingInfo: response,
+            pairingInfo: response,
           };
 
           $.ajax({
