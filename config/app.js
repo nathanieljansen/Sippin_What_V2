@@ -37,7 +37,6 @@ $(document).ready(() => {
 
 
       $("#foodInput").val("");
-<<<<<<< HEAD
 
       function foodValidation() {
         var onlyText = /[a-zA-Z]+$/
@@ -164,42 +163,6 @@ $(document).ready(() => {
               })
             }
 
-=======
-     function foodValidation() {
-       var onlyText = /[a-zA-Z]+$/
-       if (textInput == "" || !textInput.match(onlyText)) {
-         $(".notValid").text("You Should Probably Eat with Your Wine!");
-           
-       }else {
-         const wineQueryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/wine/pairing?food=" + textInput + "&maxPrice=50";
-         const wineAPI = {
-           "async": true,
-           "crossDomain": true,
-           "url": wineQueryURL,
-           "method": "GET",
-           "headers": {
-             "X-Mashape-Key": "aVuMKS8FG3mshVQlO5dNdPxZQCdrp1FpzUDjsnZtHrg9bA3DEP",
-             "Cache-Control": "no-cache",
-           }
-         }
-         $.ajax(wineAPI).then((response) => {
-           
-          console.log("response", response)
-
-          var zip = localStorage.getItem("zip");
-          var pairingRecord = {
-            zip: zip === 'DEFAULT' ? null : zip,
-            food: textInput,
-            pairingInfo: response,
-          };
-
-          $.ajax({
-            method: "POST",
-            url: "/api/pairingRecord",
-            data: pairingRecord
-          }).then(function (responseFromBackEnd) {
-            console.log('Quit it!!', responseFromBackEnd)
->>>>>>> f34d75843aed61c73b5105e1bf54e1e299fe1146
           });
         }
 
