@@ -167,7 +167,7 @@ $(document).ready(() => {
       $("#name").val("")
       $("#email").val("")
       $("#message").val("")
-      $(".submitContact").text("Thanks! We will be in touch soon!")
+      
     })
 
     function messageValidation() {
@@ -180,9 +180,9 @@ $(document).ready(() => {
         message: message
       };
       if (name == "" || email == "" || message == "") {
-        console.log("i'm empty" + newMessage)
+       
       } else {
-        console.log(newMessage);
+        $(".submitContact").text("Thanks! We will be in touch soon!")
         $.post("/api/messages", newMessage)
           .done((data) => {
             console.log(data);
