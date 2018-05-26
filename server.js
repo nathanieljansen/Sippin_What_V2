@@ -128,10 +128,4 @@ db.sequelize.sync().then(() => {
   });
 })
 
-db.sequelize.sync({force:true}).then(() => {
-  app.listen(PORT, () => {
-    console.log("App listening on PORT " + PORT);
-  })
-});
-
 

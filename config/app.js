@@ -1,14 +1,14 @@
-window.onbeforeunload =  () => {
+const onlyText = /[a-zA-Z]+$/
+
+
+
+window.onbeforeunload = () => {
   window.scrollTo(0, 0);
   $('.modal').modal();
 
 }
 
-
-
 $(document).ready(() => {
-
-
 
   $(".wineSwipe").hide();
   $("#map").hide();
@@ -22,9 +22,7 @@ $(document).ready(() => {
     });
 
     $(".searchButton").click(() => {
-      // var letters = /^[A-Za-z]+$/
       console.log(window.localStorage);
-
       event.preventDefault();
 
       $("#words").empty();
@@ -32,19 +30,15 @@ $(document).ready(() => {
       $("#otherWineImage1").empty();
       $("#otherWineImage2").empty();
       $("#otherWineImage3 ").empty();
-      let textInput = $("#foodInput").val().trim().toLowerCase();
+      let foodInput = $("#foodInput").val().trim().toLowerCase();
       foodValidation()
-
-
       $("#foodInput").val("");
 
       function foodValidation() {
-        var onlyText = /[a-zA-Z]+$/
-        if (textInput == "" || !textInput.match(onlyText)) {
+        if (foodInput == "" || !foodInput.match(onlyText)) {
           $(".notValid").text("You Should Probably Eat with Your Wine! Try Typing in Some Food");
-
         } else {
-          const wineQueryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/wine/pairing?food=" + textInput + "&maxPrice=50";
+          const wineQueryURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/food/wine/pairing?food=" + foodInput + "&maxPrice=50";
           const wineAPI = {
             "async": true,
             "crossDomain": true,
@@ -56,13 +50,11 @@ $(document).ready(() => {
             }
           }
           $.ajax(wineAPI).then((response) => {
-
             console.log("response", response)
-
             var zip = localStorage.getItem("zip");
             var pairingRecord = {
               zip: zip,
-              food: textInput,
+              food: foodInput,
               pairingInfo: response
             };
 
@@ -70,7 +62,7 @@ $(document).ready(() => {
               method: "POST",
               url: "/api/pairingRecord",
               data: pairingRecord
-            }).then((responseFromBackEnd)=> {
+            }).then((responseFromBackEnd) => {
               console.log('Quit it!!', responseFromBackEnd)
             });
 
@@ -83,7 +75,7 @@ $(document).ready(() => {
               $(".notValid").text("Sorry! " + response.message + ". We are always trying to improve. Thanks for you help!");
               database.ref().push(badPairing);
             } else if (response.pairingText === "") {
-              $(".notValid").text("Thanks for making us better! We didn't find a pairing for " + textInput + " but we are always trying to improve our app");
+              $(".notValid").text("Thanks for making us better! We didn't find a pairing for " + foodInput + " but we are always trying to improve our app");
               database.ref().push(badPairing);
             } else {
               $(".whatWhat").hide();
@@ -116,7 +108,7 @@ $(document).ready(() => {
               $(".wineSwipe").show();
 
               let newPairing = {
-                foodInput: textInput,
+                foodInput: foodInput,
                 wineSelection: pickedWine
               }
 
@@ -162,112 +154,46 @@ $(document).ready(() => {
                 $("#otherWineImage3").append(otherwineprice);
               })
             }
-
           });
         }
-
       }
-      
-
-
-
     });
 
-$(".contactButton").click(() => {
-  event.preventDefault();
-  // $(".contactButton").click, function (event) {
-  console.log("TTHIS BITCH")
-  
-  var newMessage = {
-    name: $("#name").val().trim(),
-    email: $("#email").val().trim(),
-    message: $("#message").val(),
-  };
-  console.log(newMessage);
-
-  $.post("/api/messages", newMessage)
-    .done( (data) => {
-      console.log(data);
-    });
-  // AJAX POST call goes above to send this object to the relevant post route offered by express router called "/messages/create"
-})
 
 
+    $(".contactButton").click(() => {
+      event.preventDefault();
+      messageValidation();
+      $("#name").val("")
+      $("#email").val("")
+      $("#message").val("")
+    })
 
-    // var messagesRef = firebase.database().ref("messages");
+    function messageValidation() {
+      name = $("#name").val().trim()
+      email = $("#email").val().trim()
+      message = $("#message").val()
+      let newMessage = {
+        name: name,
+        email: email,
+        message: message
+      };
+      if (name == "" || email == "" || message == "") {
+        console.log("i'm empty" + newMessage)
+      } else {
+        console.log(newMessage);
+        $.post("/api/messages", newMessage)
+          .done((data) => {
+            console.log(data);
 
-
-    //listen for form submiyt
-    // document.getElementById("contact-form").addEventListener("submit", submitForm);
-
-
-    // //submit the form
-    // function submitForm(e) {
-    //   e.preventDefault();
-
-
-
-    //   //getvalues
-    //   var firstName = getInputVal("first_name");
-    //   var lastName = getInputVal("last_name");
-    //   var email = getInputVal("email");
-    //   var message = getInputVal("textarea1");
-
-    //   console.log(name);
-
-    //   //save message
-    //   saveMessage(firstName, lastName, email, message);
-
-    //   //clear form
-    //   document.getElementById("contact-form").reset();
-    // }
-
-
-    //function to get form values
-    // function getInputVal(id) {
-    //   return document.getElementById(id).value;
-    // }
+          });
+        // $("#contact-form").text("HURRAY!!!")
+      }
+    }
 
 
-
-
-
-    // //save messages to firebase
-    // function saveMessage(firstName, lastName, email, message) {
-    //   var newMessageRef = messagesRef.push();
-    //   newMessageRef.set({
-    //     firstName: firstName,
-    //     lastName: lastName,
-    //     email: email,
-    //     message: message,
-    //   })
-    // };
-
-
-
-
-    // $(".autocomplete").keyup(function (event) {
-    //   var letterinput = $(".autocomplete").val();
-    //   var autocompleteURL = "https://spoonacular-recipe-food-nutrition-v1.p.mashape.com/recipes/autocomplete?number=10&query=" + letterinput;
-    //   var autocompleteAPI = {
-    //     "async": true,
-    //     "crossDomain": true,
-    //     "url": autocompleteURL,
-    //     "method": "GET",
-    //     "headers": {
-    //       "X-Mashape-Key": "aVuMKS8FG3mshVQlO5dNdPxZQCdrp1FpzUDjsnZtHrg9bA3DEP",
-    //       "Cache-Control": "no-cache",
-    //     }
-    //   }
-    //   $.ajax(autocompleteAPI).then(function (response) {
-    //     console.log(response)
-    //   })
-    // })
-
-    // database.ref().on("child_added", function (childSnapshot, prevChildKey) {
-    //   console.log(childSnapshot.val());
-    // });
   });
+
 
 
 
