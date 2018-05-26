@@ -2,6 +2,10 @@ const onlyText = /[a-zA-Z]+$/
 
 
 
+
+
+
+
 window.onbeforeunload = () => {
   window.scrollTo(0, 0);
   $('.modal').modal();
@@ -88,6 +92,8 @@ $(document).ready(() => {
               console.log(pickedWine);
               const otherWines = response.pairedWines[0];
 
+              $(".shareWine").attr("href", "mailto:?subject=Sippin What has Paired " + pickedWine + " with " + foodInput + "!&body=" + pickedWine)
+
               let p = $("<p>");
               p.text(response.pairingText);
               $("#words").append(p);
@@ -159,15 +165,13 @@ $(document).ready(() => {
       }
     });
 
-
-
     $(".contactButton").click(() => {
       event.preventDefault();
       messageValidation();
       $("#name").val("")
       $("#email").val("")
       $("#message").val("")
-      
+
     })
 
     function messageValidation() {
@@ -180,7 +184,7 @@ $(document).ready(() => {
         message: message
       };
       if (name == "" || email == "" || message == "") {
-       $(".submitContact").text("Oops! Looks like you've missed something!")
+        $(".submitContact").text("Oops! Looks like you've missed something!")
       } else {
         $(".submitContact").text("Thanks! We will be in touch soon!")
         $.post("/api/messages", newMessage)
