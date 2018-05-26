@@ -180,7 +180,7 @@ $(document).ready(() => {
         message: message
       };
       if (name == "" || email == "" || message == "") {
-       
+       $(".submitContact").text("Oops! Looks like you've missed something!")
       } else {
         $(".submitContact").text("Thanks! We will be in touch soon!")
         $.post("/api/messages", newMessage)
