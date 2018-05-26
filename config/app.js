@@ -167,6 +167,7 @@ $(document).ready(() => {
       $("#name").val("")
       $("#email").val("")
       $("#message").val("")
+      $(".submitContact").text("Thanks! We will be in touch soon!")
     })
 
     function messageValidation() {
