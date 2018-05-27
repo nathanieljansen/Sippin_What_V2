@@ -92,7 +92,7 @@ $(document).ready(() => {
               console.log(pickedWine);
               const otherWines = response.pairedWines[0];
 
-              $(".shareWine").attr("href", "mailto:?subject=Sippin What has Paired " + pickedWine + " with " + foodInput + "!&body=" + pickedWine)
+              $(".shareWine").attr("href", "mailto:?subject=Sippin What has Paired " + pickedWine + " with " + foodInput + "!&body=" + pickedWine +"/" + response.pairingText)
 
               let p = $("<p>");
               p.text(response.pairingText);
