@@ -184,7 +184,15 @@ textarea.materialize-textarea:focus:not([readonly]) {
   background-color: #8f8023;
   border-color: #8f8023;
 }
+/* Change the white to any color ;) */
+@-webkit-keyframes autofill {
+  to {
+    color: #666;
+    background: transparent;
+  }
+}
 
-/* .tweetButton {
- 
-} */
+input:-webkit-autofill {
+  -webkit-animation-name: autofill;
+  -webkit-animation-fill-mode: both;
+}
