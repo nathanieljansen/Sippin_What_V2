@@ -14,7 +14,7 @@ window.onbeforeunload = () => {
 
 $(document).ready(() => {
 
-  $(".wineSwipe").hide();
+  // $(".wineSwipe").hide();
   $("#map").hide();
   $(() => {
 
