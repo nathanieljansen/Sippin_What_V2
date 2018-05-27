@@ -93,6 +93,9 @@ $(document).ready(() => {
               const otherWines = response.pairedWines[0];
 
               $(".shareWine").attr("href", "mailto:?subject=Sippin What has Paired " + pickedWine + " with " + foodInput + "!&body=" + pickedWine +"/" + response.pairingText)
+              
+              $(".twitter-share-button").attr("href", "https://twitter.com/intent/tweet?text=" + "Sippin What has Paired " + pickedWine + " with " + foodInput) 
+        
 
               let p = $("<p>");
               p.text(response.pairingText);

@@ -1,48 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-</head>
-<body>
-  
-
-
-
 <div class="row">
   <div class="col s12 center">
     <h2 class="mainHeader">What are you eating?</h2>
   </div>
-  <div class="row container">
-    <div class="input-field col m8 s12">
-      <input type="text" id="foodInput" class="autocomplete-input " class="autocomplete1">
-      
-      <label class="preText " for="autocomplete-input">This can be a dish ("steak"), an ingredient ("salmon"), or a cuisine ("italian").</label>
-    </div>
-    <div class="input-field col m4 s12 center">
-      <button class="btn searchButton waves-effect waves-heavy " href="#modal1" type="submit" name="action">Get To Sippin'
-      </button>
+</div>
+<div class="row container">
+  <div class="input-field col m8 s12">
+    <input type="text" id="foodInput" class="autocomplete-input " class="autocomplete1">
+    <label class="preText " for="autocomplete-input">This can be a dish ("steak"), an ingredient ("salmon"), or a cuisine ("italian").</label>
+  </div>
+  <div class="input-field col m4 s12 center">
+    <button class="btn searchButton waves-effect waves-heavy " href="#modal1" type="submit" name="action">Get To Sippin'
+    </button>
 
-      <div id="modal1" class="modal">
-        <div class="modal-content">
-          <h4 class="buddyName">Please Enter Your Age</h4>
-          <i class="material-icons prefix">pan_tool</i>
-          <input type="text" id="ageInput" class="autocomplete-input ageVerification">
-        </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
-        </div>
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4 class="buddyName">Please Enter Your Age</h4>
+        <i class="material-icons prefix">pan_tool</i>
+        <input type="text" id="ageInput" class="autocomplete-input ageVerification">
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Submit</a>
       </div>
     </div>
   </div>
-  <div class="row container">
-    <div class="col s12 center notValid">
+</div>
+<div class="row container">
+  <div class="col s12 center notValid">
 
-    </div>
   </div>
 </div>
+
 <div class="parallax-container pImage1">
   <div class="parallax">
     <img src="/images/wine-1476628_640.jpg">
@@ -56,7 +43,7 @@
       <ul id="tabs-swipe-demo" class="tabs">
         <li class="active tab col s4">
           <a href="#test-swipe-1">What Your Sippin'</a>
-          
+
         </li>
         <li class="tab col s4">
           <a href="#test-swipe-2">Liquor Stores in Your Area</a>
@@ -68,30 +55,24 @@
       <div id="test-swipe-1" class="col s12">
         <div class="col m8 s12" id="words"></div>
         <div class="col m4 s12" id="image"></div>
-        <div class="row "></div>
-        <div class="col m12 s12 center" id="shareButton">
-        <a class="shareWine resp-sharing-button__link"
-          target="_self" aria-label="Share by E-Mail">
-          <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--large">
-            <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--normal">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <path d="M23.5 18c0 .8-.7 1.5-1.5 1.5H2c-.8 0-1.5-.7-1.5-1.5V6c0-.8.7-1.5 1.5-1.5h20c.8 0 1.5.7 1.5 1.5v12zm-3-9.5L12 14 3.5 8.5m0 7.5L7 14m13.5 2L17 14"
-                />
-              </svg>
-            </div>Share by E-Mail</div>
-        </a>
+        <div class="row">
+          <div class="col m6 s12 center" id="shareButton">
+            <a class="shareWine resp-sharing-button__link" target="_self" aria-label="Share by E-Mail">
+              <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--large">
+                <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--normal">
+                </div>Email this Pair</div>
+            </a>
+          </div>
+          <div class="col m6 s12 center">
+            <a class="twitter-share-button resp-sharing-button__link" target="_blank" aria-label="Tweet">
+              <div class="resp-sharing-button resp-sharing-button--email resp-sharing-button--large">
+                <div aria-hidden="true" class="resp-sharing-button__icon resp-sharing-button__icon--normal">
+                </div>Tweet this Pair</div>
+                </a>
+              </div>
+          </div>
         </div>
-    <a href="sms:19131234567;?&body=Question%20from%20mywebsite.com.%20%20MY%20MESSAGE%20-%20" title="Click here to TEXT US gallery token needs updating!">Send me SMS</a>
 
-
-        <div class="col m12 s12 center" id="tweetButton">
-          {{!-- <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweet</a> --}}
-          <a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=I'm%20sippin'%20on:" data-size="large">
-            Tweet</a>
-        </div>
-</div>
-        <!-- Sharingbutton E-Mail -->
-        
 
       </div>
       <div id="test-swipe-2" class="col s12">
@@ -122,7 +103,3 @@
     <img src="/images/cork-738603_640.jpg">
   </div>
 </div>
-
-</body>
-<script>async src = "https://platform.twitter.com/widgets.js" charset = "utf-8" ></script>
-</html>
