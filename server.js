@@ -9,6 +9,7 @@ const nodemailer = require('nodemailer');
 
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
+const slider = require("noUiSlider")
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();

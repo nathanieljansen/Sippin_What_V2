@@ -1,20 +1,33 @@
 const onlyText = /[a-zA-Z]+$/
 
 
-
-
-
-
-
 window.onbeforeunload = () => {
   window.scrollTo(0, 0);
-  $('.modal').modal();
 
 }
 
-$(document).ready(() => {
 
-  // $(".wineSwipe").hide();
+
+$(document).ready(() => {
+$('.modal').modal({
+  dismissible: false,
+   complete: function () {
+      let age = $("#age-input").val().trim()
+      if (age <= 20) {
+        $('#modal1').modal('open');
+        $("#age-input").hide()
+        $(".ageInput").hide()
+        $(".modalHeader").text("Whoa! You Shouldn't Be Here") 
+   } else{
+     $
+     console.log("hi " + age)
+   }
+  }
+
+});
+
+ $('#modal1').modal('open');
+  $(".wineSwipe").hide();
   $("#map").hide();
   $(() => {
 
@@ -94,7 +107,7 @@ $(document).ready(() => {
 
               $(".shareWine").attr("href", "mailto:?subject=Sippin What has Paired " + pickedWine + " with " + foodInput + "!&body=" + pickedWine +"/" + response.pairingText)
               
-              $(".twitter-share-button").attr("href", "https://twitter.com/intent/tweet?text=" + "Sippin What has Paired " + pickedWine + " with " + foodInput) 
+              $(".twitter-share-button").attr("href",  "https://twitter.com/intent/tweet?text=" + "Sippin What has aired " + pickedWine + " with " + foodInput + "!" + " Get your food and wine paring at https://sippinwhat.com ")
         
 
               let p = $("<p>");
@@ -193,12 +206,15 @@ $(document).ready(() => {
         $.post("/api/messages", newMessage)
           .done((data) => {
             console.log(data);
-
           });
-        // $("#contact-form").text("HURRAY!!!")
       }
     }
-
+    function ageValidation(){
+      age = $("#age-input");
+      if (age <= 20){
+        $(".modalHeader").text("You Need to be 21 to Sip")
+      }
+    }
 
   });
 
