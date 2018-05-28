@@ -9,10 +9,12 @@ window.onbeforeunload = () => {
 
 
 $(document).ready(() => {
+  var age;
   $('.modal').modal({
     dismissible: false,
     complete: function () {
-      let age = $("#age-input").val()
+      age = $("#age-input").val()
+      // console.log("Still old", age)
       if (age <= 20) {
         $('#modal1').modal('open');
         $("#age-input").hide()
@@ -72,8 +74,10 @@ $(document).ready(() => {
           }
           $.ajax(wineAPI).then((response) => {
             console.log("response", response)
+            console.log("Old people", age)
             var zip = localStorage.getItem("zip");
             var pairingRecord = {
+              age: age,
               zip: zip,
               food: foodInput,
               pairingInfo: response

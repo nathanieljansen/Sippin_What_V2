@@ -11,10 +11,10 @@ var db = {};
 
 module.exports =  (sequelize, DataTypes) => {
     var foodpairings = sequelize.define("foodpairings", {
-        // age: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false
-        // },
+        age: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         zip: {
             type: DataTypes.STRING,
             allowNull: true
@@ -32,26 +32,11 @@ module.exports =  (sequelize, DataTypes) => {
              allowNull: false,
              max_allowed_packet: true
          },
-        // general_notes: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false
-        // }
-        mmmmSuperSexy_match: {
+
+        first_match: {
             type: DataTypes.STRING,
-        
+        // mmmmSuperSexy_match
         },
-        // comparable_wines1: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false
-        // },
-        // comparable_wines2: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false
-        // },
-        // comparable_wines3: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false
-        // },
         description: {
             type: DataTypes.STRING(2000),
             // allowNull: false
