@@ -37,6 +37,10 @@ module.exports =  (sequelize, DataTypes) => {
             type: DataTypes.STRING,
         // mmmmSuperSexy_match
         },
+        second_match: {
+            type: DataTypes.STRING,
+            // mmmmSuperSexy_match
+        },
         description: {
             type: DataTypes.STRING(2000),
             // allowNull: false

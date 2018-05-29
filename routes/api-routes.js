@@ -81,6 +81,7 @@ module.exports = function(app) {
       food: req.body.food,
       paired: true,
       first_match: req.body.pairingInfo.productMatches[0].title,
+      second_match: req.body.pairingInfo.productMatches[1],
       description: req.body.pairingInfo.pairingText
     }
     console.log("Damn Gurl", saveFormat)  
