@@ -76,6 +76,7 @@ module.exports = function(app) {
   app.post("/api/pairingRecord", function (req, res) {
     console.log("Hit it", req.body);
     var saveFormat = {
+      age: req.body.age,
       zip: req.body.zip, 
       food: req.body.food,
       paired: true,
