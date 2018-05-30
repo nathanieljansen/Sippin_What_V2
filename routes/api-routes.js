@@ -86,7 +86,7 @@ app.get("/api/allWines/food", function (req, res) {
   })
 })
 
-app.get("/api/allWines/first_match", function (req, res) {
+app.get("/api/allWines/firstmatch", function (req, res) {
   db.foodpairings.findAll({
     attributes: ['first_match', [Sequelize.fn('COUNT', Sequelize.col('first_match')), 'first_matchCount']],
     group: ['first_match'],
@@ -128,31 +128,6 @@ app.get("/api/allWines/first_match", function (req, res) {
       res.json(dbResponse);
     });
   });
-
-
-
-  // app.get("/api/zip", function (req, res){
-  //   console.log("We hit the route API FILE with ZIP!!",db);
-  //   db.foodPairing.findAll().then(function (dbResponse) {
-  //     res.json({
-  //       zip: req.body.zip,
-  //       age: req.body.age
-  //     // console.log(dbResponse)
-  //     // res.json(dbResponse);
-  //   });
-  // });
-
-  // app.get("/api/zipCode", function (req, res) {
-  //   console.log("Zip Code", req.body);
-  //   var Zip = new zip {
-  //     zip: req.body.zip, 
-  //   }
-  //   console.log("This is my Zip Code", Zip)  
-  //   db.foodpairings(Zip).then(function (Zip) {
-  //     console.log(Zip)
-  //   });
-  // })
-  // PM work Zone Ends *******************************************
 
 
   // Route for getting some data about our user to be used client side
