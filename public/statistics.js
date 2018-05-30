@@ -1,22 +1,21 @@
 $(document).ready(function () {
     console.log("Stat page is up!");
-    // var values;
     $.ajax({
         method: "GET",
-        url: "/api/allWines",
+        url: "/api/zip",
     }).then(function (dataFromDb) {
         console.log('you get all the wines finally', dataFromDb)
-        var values = dataFromDb.map(pair => pair.zip);
-        console.log('values', values)
+        var allZipCodes = dataFromDb.map(foodpairings => foodpairings.zip);
+        console.log('Zip Code:', allZipCodes)
         var chart = c3.generate({
             bindto: '#chartZip',
             data: {
                 columns: [
-                    ["Zip", values],
-                    //["Count", count],
+                    ["Count", count],
+                    ["Zip", allZipCodes],
                 ],
                 type: 'bar',
-                // type: 'donut',
+                //type: 'donut',
                 // title: 'Zip Code',
     
                 onmouseover: function (d, i) {
@@ -31,26 +30,41 @@ $(document).ready(function () {
             },
             axis: {
                 x: {
-                    label: 'Sepal.Width'
+                    label: 'Zip Code'
                 },
                 y: {
-                    label: 'Petal.Width'
+                    label: 'Count'
                 }
             }
     
         });
-        setTimeout(function () {
-            chart.load({
-                columns: [
-                    ["wine", 130],
-                ]
-            });
-        }, 1000);
+        // setTimeout(function () {
+        //     chart.load({
+        //         columns: [
+        //             ["wine", 130],
+        //         ]
+        //     });
+        // }, 1000);
     
-        setTimeout(function () {
-            chart.unload({
-                ids: 'Merlot'
-            });
-        }, 2000);    
+        // setTimeout(function () {
+        //     chart.unload({
+        //         ids: 'Merlot'
+        //     });
+        // }, 2000);    
     });
 });
+
+
+//     newFunction();
+
+// function newFunction() {
+//     $.ajax({
+//         method: "GET",
+//         url: "/api/zipCodes",
+//     }).then(function (dataFromDb) {
+//         console.log('you get all the Zips finally', dataFromDb);
+//         var zip = dataFromDb.map(pair => pair.zip);
+//         console.log('Zip', zip);
+//     });
+// }
+    

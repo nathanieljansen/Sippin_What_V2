@@ -26,7 +26,22 @@ module.exports = function(app) {
     res.render(path.join(__dirname, "../views/statistics"));
   });
   
-  app.get("/api/allWine"), (req, res) =>{
-    res.render("/api/allWine");
+  app.get("/statistics", (req, res) => {
+    res.render(path.join(__dirname, "../views/statistics"));
+  });
+  
+  app.get("/api/allWines"), (req, res) =>{
+    res.render("/api/allWines");
+  }
+
+  app.get("/api/zip"), (req, res) =>{
+    res.render("/api/zip");
+  }
+
+  app.get("api/ages"), (req, res) =>{
+    res.render("/api/ages");
+  }
+  app.get("/api/pairingRecord"), (req, res) =>{
+    res.render("/api/pairingRecord");
   }
 };
