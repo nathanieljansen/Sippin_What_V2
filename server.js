@@ -6,10 +6,10 @@ var session = require("express-session");
 var passport = require("./config/passport");
 var exphbs = require("express-handlebars");
 const nodemailer = require('nodemailer');
+const sequelize = require("sequelize")
 
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
-const slider = require("noUiSlider")
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
@@ -114,24 +114,33 @@ app.get("/admin", (req, res) => {
 app.get("/signup", (req, res) => {
   res.render("signup");
 });
-app.get("/api/allWines", (req, res) => {
-  console.log("We hit the route SERVER.js file!!");
-  db.foodPairing.findAll().then( (dbResponse) =>{
 
-    console.log(dbResponse)
-    res.json(dbResponse);
-  });
+// app.get("api/pairingRecord", (req, res) => {
+//   res.render("pairingRecord");
+// });
+
+app.get("/api/allWines", (req, res) => {
+    sql.connect(sqlConfig, function() {
+        var wine = new sql.Request();
+        wine.query('SELECT COUNT(zip) FROM foodpairings', function(err, recordset) {
+          console.log("all the zipcodes thagt you asked for" + zip);
+            if(err) console.log(err);
+            res.end(JSON.stringify(recordset)); // Result in JSON format
+        });
+    });
+})
+
+app.get("/api/zip", (req, res) => {
+  res.json("zip");
+});
+
+app.get("/api/ages", (req, res) => {
+    res.json("ages");
 });
 
 
-db.sequelize.sync({force:true}).then(() => {
+db.sequelize.sync().then(() => {
   app.listen(PORT, () => {
     console.log("App listening on PORT " + PORT);
   });
 })
-
-
-
-
-
-
