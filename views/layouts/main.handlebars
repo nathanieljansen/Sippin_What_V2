@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,22 +12,24 @@
   <script src="./map.js"></script>
   <script src="./signup.js"></script>
   <script src="./login.js"></script>
-  <script src="./statistics.js"></script>
+  <link href="./c3.css" rel="stylesheet">
   <script src="./c3.min.js"></script>
- 
+<script src="https://d3js.org/d3.v3.min.js"></script>
+  <script src="./statistics.js"></script>
 
-<link href="./c3.css" rel="stylesheet">
+  
   <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
-    <link rel="shortcut icon" href="/images/flavicon.png" type="image/x-icon">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    </head>
-   
-  <title>Sippin What</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+  <link rel="shortcut icon" href="/images/flavicon.png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
+<title>Sippin What</title>
+</head>
+
 <body>
-   <nav>
+  <nav>
     <div class="nav-wrapper #5b0b0b">
       <a href="/" class="brand-logo left">Sip This</a>
       <ul id="nav-mobile" class="right">
@@ -36,49 +39,52 @@
         <li>
           <a class="meet" href="/contact">Contact Us</a>
         </li>
-        {{!-- <li>
+        {{!--
+        <li>
           <a class="meet" href="/signup">Register</a>
         </li> --}}
-  
+
     </div>
   </nav>
   {{{body}}}
-<footer class="page-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col l6 s12">
-        <h5 class="white-text">Sippin What</h5>
-        <p class="grey-text text-lighten-4">Thanks for checking out Sippin' What</p>
-      </div>
-      <div class="col l4 offset-l2 s12">
-        <h5 class="white-text">Links</h5>
-        <ul>
-          <li>
-            <a class="grey-text text-lighten-3" href="https://www.instagram.com/sippinwhat/" target="_blank">Check us out on Instagram!</a>
-          </li>
-          <li>
-            {{!-- <a class="grey-text text-lighten-3" href="https://twitter.com/SippinWhat" target="_blank">Our Twitter Feed</a> --}}
-            <a href="https://twitter.com/SippinWhat" class="twitter-follow-button" data-size="large" data-show-screen-name="false"
-              data-show-count="false" target="_blank">Follow @SippinWhat</a>
-          </li>
-        </ul>
-      </div>
-      
-    </div>
-      <a class="grey-text text-lighten-3" href="/login">Admin Login</a>
-  </div>
-  <div class="footer-copyright">
+  <footer class="page-footer">
     <div class="container">
-      © 2018 Sippin What
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Sippin What</h5>
+          <p class="grey-text text-lighten-4">Thanks for checking out Sippin' What</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li>
+              <a class="grey-text text-lighten-3" href="https://www.instagram.com/sippinwhat/" target="_blank">Check us out on Instagram!</a>
+            </li>
+            <li>
+              {{!--
+              <a class="grey-text text-lighten-3" href="https://twitter.com/SippinWhat" target="_blank">Our Twitter Feed</a> --}}
+              <a href="https://twitter.com/SippinWhat" class="twitter-follow-button" data-size="large" data-show-screen-name="false" data-show-count="false"
+                target="_blank">Follow @SippinWhat</a>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+      <a class="grey-text text-lighten-3" href="/login">Admin Login</a>
     </div>
-  </div>
-</footer>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2018 Sippin What
+      </div>
+    </div>
+  </footer>
 </body>
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
 
 <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA-rwSNXqKmyW0_nU944q96q_CYinJRdSo&libraries=places&callback=initMap">
-</script>
-{{!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> --}}
+</script> {{!--
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> --}}
+
 </html>

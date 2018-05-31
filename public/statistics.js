@@ -1,71 +1,45 @@
+// import c3 from "./c3.min.js"
+
 $(document).ready(function () {
     console.log("Stat page is up!");
     $.ajax({
         method: "GET",
         url: "/api/allWines/age",
     }).then((response) => {
-                console.log("response", response)
+        const chartObject = {
+                data: {
+                    xs: {
+                        age: "age_x"
+                    },
+                    columns: [
+                        ["age", ...response.map(age => age.ageCount)],
+                        ["age_x", ...response.map(age => age.age)]
+                        
+                    ],
+                    type: "scatter"
+                },
+                axis: {
+                    x: {
+                        label: "Age",
+                        tick: {
+                            fit: false
+                        }
+                    },
+                    y: {
+                        label: "Count"
+                    }
+                }
+            }
+
+        
+
+        const ageChart = c3.generate({ ...chartObject})
+
+        $("#chart").append(ageChart)
+    })
+    
 })
-})
-//         var allZipCodes = dataFromDb.map(foodpairings => foodpairings.zip);
-//         console.log('Zip Code:', allZipCodes)
-//         var chart = c3.generate({
-//             bindto: '#chart',
-//             data: {
-//                 columns: [
-//                     ["Count", count],
-//                     ["Zip", allZipCodes],
-//                 ],
-//                 type: 'bar',
-//                 //type: 'donut',
-//                 // title: 'Zip Code',
-
-//                 onmouseover: function (d, i) {
-//                     console.log("onmouseover", d, i, this);
-//                 },
-//                 onmouseout: function (d, i) {
-//                     console.log("onmouseout", d, i, this);
-//                 },
-//                 onclick: function (d, i) {
-//                     console.log("onclick", d, i, this);
-//                 },
-//             },
-//             axis: {
-//                 x: {
-//                     label: 'Zip Code'
-//                 },
-//                 y: {
-//                     label: 'Count'
-//                 }
-//             }
-
-//         });
-//         // setTimeout(function () {
-//         //     chart.load({
-//         //         columns: [
-//         //             ["wine", 130],
-//         //         ]
-//         //     });
-//         // }, 1000);
-
-//         // setTimeout(function () {
-//         //     chart.unload({
-//         //         ids: 'Merlot'
-//         //     });
-//         // }, 2000);    
-//     });
-// });
 
 
-//     newFunction();
 
-// function newFunction() {
-//     $.ajax({
-//         method: "GET",
-//         url: "/api/zipCodes",
-//     }).then(function (dataFromDb) {
-//         console.log('you get all the Zips finally', dataFromDb);
-//         var zip = dataFromDb.map(pair => pair.zip);
-//         console.log('Zip', zip);
-//     });
-// }
+

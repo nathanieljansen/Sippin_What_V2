@@ -115,6 +115,8 @@ app.get("/signup", (req, res) => {
   res.render("signup");
 });
 
+
+
 // app.get("api/pairingRecord", (req, res) => {
 //   res.render("pairingRecord");
 // });
