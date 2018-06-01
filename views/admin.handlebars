@@ -1,15 +1,68 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+
 <body>
   ADMIN PAGE
-      <a class="navbar-brand" href="/logout">
-        Logout
-      </a>
+  <a class="navbar-brand" href="/logout">
+    Logout
+  </a>
+  <div class="row adminSwipe container">
+    <ul id="tabs-swipe-demo" class="tabs">
+      <li class="active tab col s4">
+        <a href="#test-swipe-1">Zip Demographic</a>
+
+      </li>
+      <li class="tab col s4">
+        <a href="#test-swipe-2">Age Demographic</a>
+      </li>
+      <li class="tab col s4">
+        <a href="#test-swipe-3">Wines Chosen</a>
+      </li>
+      <li class="tab col s4">
+        <a href="#test-swipe-4">Food Searches</a>
+      </li>
+    </ul>
+    <div id="test-swipe-1" class="col s12">
+      <div class="row center">
+        <h1>Users By Zip</h1>
+          <div id="chart" class="zipChart"></div>
+        </div>
+      </div>
+        <div id="test-swipe-2" class="col s12">
+          <div class="row center">
+            <h1>Users By Age</h1>
+            <div id="chart" class="ageChart">
+            </div>
+          </div>
+        </div>
+        <div id="test-swipe-3" class="col s12">
+          <div class="row center">
+            <h1>Wines Chosen</h1>
+            <div id="chart" class="wineChart">
+            </div>
+          </div>
+        </div>
+        <div id="test-swipe-4" class="col s12">
+          <div class="row center">
+            <h1>Food Searches</h1>
+            <div id="chart" class="foodChart">
+            </div>
+          </div>
+        </div>
+
+
+
+    </div>
+
+
+  </div>
 </body>
+
 </html>
