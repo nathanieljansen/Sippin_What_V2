@@ -8,21 +8,26 @@ $(document).ready(function () {
     }).then((response) => {
         const ageChart = c3.generate({
             bindto: ".ageChart",
+           
             data: {
+
                 xs: {
                     age: "age_x"
                 },
+                colors: {
+                    age: "#8f8023"
+                },
                 columns: [
-                    ["age", ...response.map(age => age.ageCount)],
-                    ["age_x", ...response.map(age => age.age)]
+                   ["age", ...response.map(age => age.ageCount)], 
+                   ["age_x", ...response.map(age => age.age)]
 
                 ],
-                type: "bar"
+                type: "area"
             },
             axis: {
                 x: {
-                   type: "category",
-                    label: "Age",
+                //    type: "category",
+                //     label: "Age",
                     tick: {
                         fit: false
                     }
@@ -32,6 +37,7 @@ $(document).ready(function () {
                 }
             }
         })
+        
     })
     $.ajax({
         method: "GET",
@@ -42,6 +48,9 @@ $(document).ready(function () {
             data: {
                 xs: {
                     zip: "zip_x"
+                },
+                colors: {
+                    zip: "#8f8023"
                 },
                 columns: [
                     ["zip", ...response.map(zip => zip.zipCount)],
@@ -75,6 +84,9 @@ $(document).ready(function () {
                xs: {
                    first_match: "first_match_x"
                },
+               colors: {
+                   first_match: "#8f8023"
+               },
                columns: [
                    ["first_match", ...response.map(first_match => first_match.first_matchCount)],
                    ["first_match_x", ...response.map(first_match => first_match.first_match)]
@@ -107,12 +119,15 @@ $(document).ready(function () {
                 xs: {
                     food: "food_x"
                 },
+                colors: {
+                    food: "#8f8023"
+                },
                 columns: [
                     ["food", ...response.map(food => food.foodCount)],
                     ["food_x", ...response.map(food => food.food)]
 
                 ],
-                type: "bar"
+                type: "area"
             },
             axis: {
                 x: {
@@ -128,6 +143,15 @@ $(document).ready(function () {
             }
         })
     })
+
+    setTimeout(function () {
+        chart.load({
+            columns: [
+                
+            ]
+        });
+    }, 1500);
+    
 })
 
 
