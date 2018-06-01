@@ -5,7 +5,7 @@ var session = require("express-session");
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
 var exphbs = require("express-handlebars");
-const nodemailer = require('nodemailer');
+// const nodemailer = require('nodemailer');
 const sequelize = require("sequelize")
 
 var PORT = process.env.PORT || 8080;
@@ -141,7 +141,7 @@ app.get("/api/ages", (req, res) => {
 });
 
 
-db.sequelize.sync().then(() => {
+db.sequelize.sync({force:true}).then(() => {
   app.listen(PORT, () => {
     console.log("App listening on PORT " + PORT);
   });
