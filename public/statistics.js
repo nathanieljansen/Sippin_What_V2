@@ -144,13 +144,13 @@ $(document).ready(function () {
         })
     })
 
-    setTimeout(function () {
-        chart.load({
-            columns: [
+    // setTimeout(function () {
+    //     chart.load({
+    //         columns: [
                 
-            ]
-        });
-    }, 1500);
+    //         ]
+    //     });
+    // }, 1500);
     
 })
 
