@@ -85,7 +85,7 @@ $(document).ready(() => {
 
             $.ajax({
               method: "POST",
-              url: "/api/pairingRecord",
+              url: "/api/allWines",
               data: pairingRecord
             }).then((responseFromBackEnd) => {
               console.log('Quit it!!', responseFromBackEnd)

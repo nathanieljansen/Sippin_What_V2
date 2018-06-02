@@ -123,14 +123,7 @@ app.get("/signup", (req, res) => {
 // });
 
 app.get("/api/allWines", (req, res) => {
-    sql.connect(sqlConfig, function() {
-        var wine = new sql.Request();
-        wine.query('SELECT COUNT(zip) FROM foodpairings', function(err, recordset) {
-          console.log("all the zipcodes thagt you asked for" + zip);
-            if(err) console.log(err);
-            res.end(JSON.stringify(recordset)); // Result in JSON format
-        });
-    });
+
 })
 
 app.get("/api/zip", (req, res) => {
