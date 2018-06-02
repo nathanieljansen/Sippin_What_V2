@@ -224,7 +224,6 @@ $(document).ready(() => {
         $(".modalHeader").text("You Need to be 21 to Sip")
       }
     }
-
   });
 
 
