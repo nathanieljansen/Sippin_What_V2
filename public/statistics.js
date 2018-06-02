@@ -1,7 +1,7 @@
 // import c3 from "./c3.min.js"
 
 $(document).ready(function () {
-    console.log("Stat page is up!");
+
     $.ajax({
         method: "GET",
         url: "/api/allWines/age",
