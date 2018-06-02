@@ -20,7 +20,7 @@ function initMap() {
       };
 
       $.ajax({
-        url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + pos.lat + "," + pos.lng + "&sensor=true",
+        url: "https://maps.googleapis.com/maps/api/geocode/json?latlng=" + pos.lat + "," + pos.lng + "&sensor=true&key=AIzaSyA6bL6UJOG73Si1xEJg19r_BJOKMLIFnjM",
         type: "GET",
       }).then((resultsBack) => {
         console.log(resultsBack);

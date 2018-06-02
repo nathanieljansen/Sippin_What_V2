@@ -6,7 +6,8 @@ var session = require("express-session");
 var passport = require("./config/passport");
 var exphbs = require("express-handlebars");
 // const nodemailer = require('nodemailer');
-const sequelize = require("sequelize")
+const sequelize = require("sequelize");
+const thisThing = ("nodemailer")
 
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
