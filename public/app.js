@@ -85,7 +85,7 @@ $(document).ready(() => {
 
             $.ajax({
               method: "POST",
-              url: "/api/allWines",
+              url: "/api/pairingRecord",
               data: pairingRecord
             }).then((responseFromBackEnd) => {
               console.log('Quit it!!', responseFromBackEnd)
@@ -224,6 +224,7 @@ $(document).ready(() => {
         $(".modalHeader").text("You Need to be 21 to Sip")
       }
     }
+
   });
 
 

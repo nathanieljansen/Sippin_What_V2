@@ -97,26 +97,26 @@ app.get("/api/allWines/firstmatch", function (req, res) {
 })
 
 
-  // app.get("/api/pairingRecord", function (req, res) {
-  //   console.log("pairingRecord ", db);
-  //   db.foodpairings.findAll({
-  //     where: {
-  //       age: res.body.age
-  //     }
-  //   }).then(age => res.json(age))
-  // });
+  app.get("/api/pairingRecord", function (req, res) {
+    console.log("pairingRecord ", db);
+    db.foodpairings.findAll({
+      where: {
+        age: res.params.age
+      }
+    }).then(age => res.json(age))
+  });
 
-  // app.get("/api/allWines", (req, res) => {
-  //   console.log("We hit the route SERVER.js file!!");
-  //   db.foodpairings.findAll().then((dbResponse) => {
+  app.get("/api/allWines", (req, res) => {
+    console.log("We hit the route SERVER.js file!!");
+    db.foodpairings.findAll().then((dbResponse) => {
 
-  //     // console.log(dbResponse)
-  //     res.json({
-  //       zip: res.body.zip,
-  //       age: res.body.age
-  //     });
-  //   });
-  // });
+      // console.log(dbResponse)
+      res.json({
+        zip: res.body.zip,
+        age: res.body.age
+      });
+    });
+  });
 
   app.get("/api/zipCodes", (req, res) => {
     console.log("We hit the zipcode route SERVER.js file!!");
@@ -145,7 +145,7 @@ app.get("/api/allWines/firstmatch", function (req, res) {
     }
   });
 
-  app.post("/api/allWines", function (req, res) {
+  app.post("/api/pairingRecord", function (req, res) {
     console.log("Hit it", req.body);
     var saveFormat = {
       age: req.body.age,

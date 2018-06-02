@@ -9,6 +9,7 @@ var exphbs = require("express-handlebars");
 const sequelize = require("sequelize");
 const thisThing = ("nodemailer")
 
+
 var PORT = process.env.PORT || 8080;
 var db = require("./models");
 
@@ -118,12 +119,19 @@ app.get("/signup", (req, res) => {
 
 
 
-// app.get("api/pairingRecord", (req, res) => {
-//   res.render("pairingRecord");
-// });
+app.get("api/pairingRecord", (req, res) => {
+  res.json("pairingRecord");
+});
 
 app.get("/api/allWines", (req, res) => {
-
+    sql.connect(sqlConfig, function() {
+        var wine = new sql.Request();
+        wine.query('SELECT COUNT(zip) FROM foodpairings', function(err, recordset) {
+          console.log("all the zipcodes thagt you asked for" + zip);
+            if(err) console.log(err);
+            res.end(JSON.stringify(recordset)); // Result in JSON format
+        });
+    });
 })
 
 app.get("/api/zip", (req, res) => {
