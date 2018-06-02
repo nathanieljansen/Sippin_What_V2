@@ -73,9 +73,8 @@ $(document).ready(() => {
             }
           }
           $.ajax(wineAPI).then((response) => {
-            console.log("response", response)
-            console.log("Old people", age)
-            var zip = localStorage.getItem("zip");
+            console.log("Old people", age, zip, foodInput,)
+            // var zip = localStorage.getItem("zip");
             var pairingRecord = {
               age: age,
               zip: zip,
@@ -85,13 +84,13 @@ $(document).ready(() => {
 
             $.ajax({
               method: "POST",
-              url: "/api/pairingRecord",
+              url: "./api/allWines",
               data: pairingRecord
             }).then((responseFromBackEnd) => {
               console.log('Quit it!!', responseFromBackEnd)
             });
 
-            console.log(pairingRecord)
+            console.log(JSON.stringify(pairingRecord) + "hi")
 
 
 

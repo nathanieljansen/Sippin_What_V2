@@ -44,7 +44,7 @@ module.exports = function (app) {
 
 
 
-  app.get("/api/allWines", (req, res) => {
+  app.get("/api/allWines", function (req, res) {
     console.log("We hit the route SERVER.js file!!");
     db.foodpairings.findAll().then( (dbResponse) =>{
   
@@ -55,7 +55,6 @@ module.exports = function (app) {
 
 
   app.get("/api/allWines/zip", function (req, res) {
-    console.log("doing this")
     db.foodpairings.findAll({
       attributes: ['zip', [Sequelize.fn('COUNT', Sequelize.col('zip')), 'zipCount']],
       group: ['zip'],
@@ -118,34 +117,8 @@ app.get("/api/allWines/firstmatch", function (req, res) {
     });
   });
 
-  app.get("/api/zipCodes", (req, res) => {
-    console.log("We hit the zipcode route SERVER.js file!!");
-    db.foodpairings.findAll(zip).then((dbResponse) => {
-      // where: {
-      //   count: ,
-      // }
-      // console.log(dbResponse)
-      res.json(dbResponse);
-    });
-  });
 
-
-  // Route for getting some data about our user to be used client side
-  app.get("/api/user_data", function (req, res) {
-    if (!req.user) {
-      // The user is not logged in, send back an empty object
-      res.json({});
-    } else {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
-      res.json({
-        email: req.user.email,
-        id: req.user.id
-      });
-    }
-  });
-
-  app.post("/api/pairingRecord", function (req, res) {
+  app.post("/api/allWines", function (req, res) {
     console.log("Hit it", req.body);
     var saveFormat = {
       age: req.body.age,

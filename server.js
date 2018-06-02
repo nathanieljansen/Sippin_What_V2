@@ -119,20 +119,20 @@ app.get("/signup", (req, res) => {
 
 
 
-app.get("api/pairingRecord", (req, res) => {
+app.get("/api/pairingRecord", (req, res) => {
   res.json("pairingRecord");
 });
 
-app.get("/api/allWines", (req, res) => {
-    sql.connect(sqlConfig, function() {
-        var wine = new sql.Request();
-        wine.query('SELECT COUNT(zip) FROM foodpairings', function(err, recordset) {
-          console.log("all the zipcodes thagt you asked for" + zip);
-            if(err) console.log(err);
-            res.end(JSON.stringify(recordset)); // Result in JSON format
-        });
-    });
-})
+// app.get("/api/allWines", (req, res) => {
+//     sql.connect(sqlConfig, function() {
+//         var wine = new sql.Request();
+//         wine.query('SELECT COUNT(zip) FROM foodpairings', function(err, recordset) {
+//           console.log("all the zipcodes thagt you asked for" + zip);
+//             if(err) console.log(err);
+//             res.end(JSON.stringify(recordset)); // Result in JSON format
+//         });
+//     });
+// })
 
 app.get("/api/zip", (req, res) => {
   res.json("zip");
@@ -143,7 +143,7 @@ app.get("/api/ages", (req, res) => {
 });
 
 
-db.sequelize.sync().then(() => {
+db.sequelize.sync({force:true}).then(() => {
   app.listen(PORT, () => {
     console.log("App listening on PORT " + PORT);
   });
