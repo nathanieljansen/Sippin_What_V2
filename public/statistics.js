@@ -1,4 +1,3 @@
-// import c3 from "./c3.min.js"
 
 $(document).ready(function () {
 
@@ -27,7 +26,7 @@ $(document).ready(function () {
             axis: {
                 x: {
                 //    type: "category",
-                //     label: "Age",
+                    label: "Age",
                     tick: {
                         fit: false
                     }

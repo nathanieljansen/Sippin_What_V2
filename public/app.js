@@ -16,15 +16,24 @@ $(document).ready(() => {
       age = $("#age-input").val()
       // console.log("Still old", age)
       if (age <= 20) {
+        $('.modal').modal({
+          dismissible: false
+        })
         $('#modal1').modal('open');
         $("#age-input").hide()
         $(".ageInput").hide()
         $(".modalHeader").text("Whoa! You Shouldn't Be Here.")
         $(".tooYoung").text("Your Parents Would Love This")
       } else if (age >= 100) {
+        $('.modal').modal({
+           dismissible: false
+        })
         $('#modal1').modal('open');
         $(".modalHeader").text("Really?! E-Mail Us Your ID")
       } else if (age ===" ") {
+        $('.modal').modal({
+          dismissible: false
+        })
         $('#modal1').modal('open');
         $(".modalHeader").text("Just Put In Your Age")
       }
